@@ -1,0 +1,170 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #f2e1d6, #d2b1a3); /* Soft brown and cream gradient */
+    background-image: url('WhatsApp Image 2024-12-18 at 21.11.34.jpeg'); /* Gambar sebagai background */
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-size: cover; 
+    color: #4a3221; 
+    text-align: center;
+    padding: 110px; 
+}
+
+
+/* Container */
+.container {
+    max-width: 450px; 
+    margin: 30px auto; 
+    padding: 40px;
+    background-color: #8e8b7b; 
+    border-radius: 15px; 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8); 
+}
+.container {
+    max-width: 450px;
+    margin: 30px auto;
+    padding: 40px;
+    background-color: #868479; /* Base color */
+    border-radius: 15px;
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.5), 
+                -4px -4px 8px rgba(255, 255, 255, 0.1); /* 3D shadow effect */
+    transform: translateZ(0); /* Ensure rendering in 3D space */
+    transition: all 0.3s ease; /* Smooth hover transition */
+}
+
+.container:hover {
+    box-shadow: 10px 10px 20px rgba(239, 234, 234, 0.852), 
+                -6px -6px 12px rgba(249, 246, 246, 0.73); /* Enhanced shadow on hover */
+    transform: translateY(-8px); /* Lift container slightly */
+    
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-image {
+    width: 80px; /* Perkecil ukuran gambar */
+    height: 80px; /* Tetap proporsional untuk membuatnya bundar */
+    object-fit: cover; /* Memastikan gambar pas di dalam lingkaran */
+    border-radius: 50%; /* Membuat gambar menjadi bundar */
+    mix-blend-mode: multiply; /* Efek pencampuran warna */
+    box-shadow: 0 4px 6px rgba(171, 162, 162, 0.874); /* Tambahkan bayangan untuk estetika */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Animasi saat hover */
+}
+
+.logo-image:hover {
+    transform: scale(1.1); /* Membesarkan sedikit saat hover */
+    filter: brightness(1.2); /* Mencerahkan sedikit */
+}
+
+/* Tombol */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+.button {
+    background-color: #f8f1e5; /* Soft cream background */
+    color: #5f4b3c; /* Dark brown text */
+    padding: 15px;
+    border: none;
+    border-radius: 12px; /* Rounded corners */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.5); /* Button shadow */
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: #e0d1b1; /* Lighter soft brown for hover */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Slightly smaller shadow on hover */
+    transform: translateY(3px); /* Push effect on hover */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    .container {
+        max-width: 90%; /* Allow container to adapt to smaller screens */
+        padding: 15px;
+    }
+
+    .button {
+        font-size: 1.2em; /* Adjust font size for smaller screens */
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .button {
+        font-size: 1.1em; /* Slightly smaller font size for very small screens */
+        padding: 10px;
+    }
+}
+/* Efek Ripple */
+.ripple {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    pointer-events: none; /* Tidak mengganggu klik */
+    transform: scale(0);
+    animation: ripple-animation 0.6s ease-out;
+    z-index: 1; /* Pastikan berada di atas tombol */
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(10);
+        opacity: 0;
+    }
+}
+
+/* Pastikan tombol memiliki posisi relatif */
+.button {
+    position: relative;
+    overflow: hidden; /* Pastikan ripple tidak keluar dari tombol */
+}
+.button {
+    background: linear-gradient(to bottom, #f9f5eb, #e0d1b1); /* Gradient for depth */
+    color: #5f4b3c;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.5), 
+                -4px -4px 8px rgba(255, 255, 255, 0.1); /* 3D shadow effect */
+    transition: all 0.3s ease;
+    transform: translateZ(0); /* Ensure rendering in 3D space */
+    position: relative; /* For ripple effect */
+    overflow: hidden; /* For ripple effect */
+}
+
+.button:hover {
+    background: linear-gradient(to bottom, #f5e5cb, #d3b792); /* Slightly darker gradient on hover */
+    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.5), 
+                -6px -6px 10px rgba(255, 255, 255, 0.2); /* Enhanced shadow */
+    transform: translateY(-3px); /* Lift button slightly */
+}
+
+/* Klik Efek Menekan */
+.button:active {
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.3), 
+                inset -2px -2px 4px rgba(255, 255, 255, 0.1); /* Inner shadow for pressed effect */
+    transform: translateY(1px); /* Simulate button press */
+}
